@@ -16,7 +16,7 @@ In this assignment, you will work collaboratively with your assigned teammate to
    - Both P1 and P2 should create a fork of the `DS219/seprep` repository.
 
 **4. Folder Creation:**
-   - After forking the repository, P2 will create a folder with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
+   - After forking the repository, P2 will create a folder in `assignments/assignment3` with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
    - Inside this folder, P2 should add a new document named `<Their Name>.md`.
 
 **5. Upstream Repository Setup:**
