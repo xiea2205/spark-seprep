@@ -13,7 +13,7 @@ In this assignment, you will work collaboratively with your assigned teammate to
    - We will be working within the `ds219/seprep/assignments/assignment3` directory structure on GitHub.
 
 **3. Forking the Main Repository:**
-   - Both P1 and P2 should create a fork of the `DS219/seprep/assignments/assignment3` repository.
+   - Both P1 and P2 should create a fork of the `DS219/seprep` repository.
 
 **4. Folder Creation:**
    - After forking the repository, P2 will create a folder with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
