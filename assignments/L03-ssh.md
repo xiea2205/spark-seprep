@@ -10,6 +10,13 @@ Note: `directory` and `folder` are interchangeable in the following tasks.
 ssh-copy-id -i ~/.ssh/id_rsa.pub YOUR_NAME@34.66.148.30
 # password: buedu
 ```
+
+For windows,
+```
+ssh -i ~/.ssh/id_rsa.pub YOUR_NAME@34.66.148.30
+# password: buedu
+```
+
 1. SSH into the machine running at IP address `34.66.148.30`. Your username is your BU email address without the `@bu.edu`.
 
 ```bash
