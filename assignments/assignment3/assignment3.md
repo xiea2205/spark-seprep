@@ -10,10 +10,10 @@ In this assignment, you will work collaboratively with your assigned teammate to
    - Each team member will be designated as either P1 or P2.
 
 **2. GitHub Repository Setup:**
-   - We will be working within the `ds219/seprep/assignments/assignment3` directory structure on GitHub.
+   - We will be working within the `DS219/spark-seprep/assignments/assignment3` directory structure on GitHub.
 
 **3. Forking the Main Repository:**
-   - Both P1 and P2 should create a fork of the `DS219/seprep` repository.
+   - Both P1 and P2 should create a fork of the `DS219/spark-seprep` repository.
 
 **4. Folder Creation:**
    - After forking the repository, P2 will create a folder in `assignments/assignment3` with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
@@ -48,7 +48,7 @@ In this assignment, you will work collaboratively with your assigned teammate to
 1. Follow the same steps as described in P1's upstream repository setup, but replace P1's fork with P2's fork when adding the upstream remote and URL.
 
 **8. Final PR to Main Upstream:**
-   - To complete the process, P2 will submit a pull request to the main upstream repository (`DS219/seprep/assignments/assignment3`) containing the changes made by both teammates.
+   - To complete the process, P2 will submit a pull request to the main upstream repository (`DS219/spark-seprep`) containing the changes to `assignments/assignment3` made by both teammates.
 
 **9. Adding a PR to Somebody's Fork:**
    - As part of the collaboration, both P1 and P2 should become familiar with submitting pull requests to each other's forks. This process allows for reviewing and merging changes within the team.
