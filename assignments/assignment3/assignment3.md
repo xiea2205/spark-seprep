@@ -1,73 +1,118 @@
 **Assignment: Collaborative GitHub Project - Creating Team Repositories**
 
 **Objective:**
+
 In this assignment, you will work collaboratively with your assigned teammate to set up GitHub repositories, create folders, submit pull requests to each other's forks, and establish upstream repositories for P1 and P2. The aim is to enhance your version control skills and teamwork.
 
 **Instructions:**
 
 **1. Team Pairings:**
+
    - Instructors have already assigned pairs for all students, resulting in a total of 15 teams for this assignment.
-   - Each team member will be designated as either P1 or P2.
+   - Each team member will be designated as either `P1` or `P2`.
 
 **2. GitHub Repository Setup:**
+
    - We will be working within the `DS219/spark-seprep/assignments/assignment3` directory structure on GitHub.
 
 **3. Forking the Main Repository:**
-   - Both P1 and P2 should create a fork of the `DS219/spark-seprep` repository.
 
-**4. Folder Creation:**
-   - After forking the repository, P2 will create a folder in `assignments/assignment3` with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
-   - Inside this folder, P2 should add a new document named `<Their Name>.md`.
+   - Both `P1` and `P2` should create a fork of the `DS219/spark-seprep` repository.
 
-**5. Upstream Repository Setup:**
-   - After forking the repository, establish upstream repositories for both P1 and P2 to facilitate collaboration.
+**4. Cloning your Fork:**
 
-**For P1's Upstream Repository (Pointing to P2's Fork):**
-1. Open your terminal or command prompt.
-2. Navigate to the directory where you want to work on your local repository, or create a new directory if needed.
-3. Use the following command to add a remote named "upstream" that points to your teammate P2's fork:
+   - Both `P1` and `P2` should clone their fork of the `DS219/spark-seprep` repository.
+
    ```bash
-   git remote add partner_upstream https://github.com/Teammate_P2_username/repository_name.git
+   mkdir -p ~/github
+   cd ~/github
+   git clone git@github.com:yourgh-name/spark-seprep.git  # if your SSH key is set correctly in GH
+   git clone https://github.com/yourgh-name/spark-seprep.git # if your SSH key is not set correctly in GH
+   cd spark-seprep
+   git remote show -v
+   git remote add upstream git@github.com:DS219/spark-seprep.git  # if your SSH key is set correctly in GH
+   git remote add upstream  https://github.com/DS219/spark-seprep.git # if your SSH key is not set correctly in GH
    ```
-   Replace `Teammate_P2_username` with P2's GitHub username and `repository_name` with the name of P2's forked repository.
-4. Verify that the upstream repository has been added correctly by running:
+
+**5. Update your local main branch**
+
+   - Get in the habit of updating your local checkout before starting any new work!
+
    ```bash
+   # First, ensure your main branch is in sync with upstream/main, both locally and in GH
+   # It's not required right now as everything is up-to-date,
+   # but do this every time you make a new working branch. Get in this habit!
+   git fetch --all
+   git rebase upstream/main
+   git push origin main
+   # Now your local main branch is in sync with upstream/main
+   ```
+
+**6. Create a Working Branch: P1 & P2 and `add`, `commit`, then `push` a change**
+
+   - P1 will push a change to a new branch of their fork of spark-seprep 
+   - P2 will push a change to a new branch of their fork and submit a PR to P1's fork of spark-seprep 
+
+**Folder Creation: P1**
+
+   - `P1` will create a folder in `assignments/assignment3` with the following nomenclature: `<Team Number>_<Teammate 1 Name>_<Teammate 2 Name>`. For example, if your team number is 3 and the teammates are Alice and Bob, the folder name would be `Team3_Alice_Bob`.
+   - Inside this folder, `P1` should add a new document named `<Their Name>.md` and create content in that document.
+
+   ```bash
+   git checkout -b assignment-3-branch-p1
+   mkdir assignments/assignment3/team1_p1name_p2name
+   touch p1name.md
+   # Now, open the doc with whatever editor or file manager you prefer, and add content to this document.
+   # It can be "hello world" or "this is my file", "P1 reporting for duty"  or whatever you want
+
+   git add .
+   git commit -m "[your name]:P1 assignment 3"
+   git push origin assignment-3-branch-p1
+   ```
+
+**7. Working Collaboration: P2**
+
+   - Use the following command to add a remote named "p1" that points to your teammate's fork:
+
+   ```bash
+   # replace Teammate_P1_username
+   git remote add p1 git@github.com:Teammate_P1_username/spark-seprep.git # if SSH key is set up in GH correctly
+   git remote add p1 https://github.com/Teammate_P1_username/spark-seprep.git # if SSH key is not set up
+
+   # Verify that your partner's fork has been added correctly by running:
    git remote -v
+
+   git fetch --all
+   git checkout -b assignment-3-branch-p2 p1/assignment-3-branch-p1 # P2 do this
+   
+   touch assignments/assignment3/<your team'd directory>/<Teammate 2 Name>.md
+   # Now, open the doc with whatever editor or file manager you prefer, and add content to this document.
+   # It can be "hello world" or "this is my file", "P2 reporting for duty" or whatever you want
+
+   git add .
+   git commit -m "[your name]:P2 assignment 3"
+   git push origin assignment-3-branch-p2
    ```
-   You should see "partner_upstream" listed as a remote with the URL pointing to P2's fork.
 
-**6. Initial Pull Request (PR) to P1's Fork:**
-   - Do 
-```
-git status #to see your changes
-git add . # to add all changes
-git commit -m "Message goes here"
-git push origin main
-```
-   - Go to UI and you will see your fork one commit ahead of upstream.
-   - P2 will initiate the collaboration by submitting a pull request to P1's fork (P1's upstream repository).
-   - P1 should review P2's pull request and merge it into their fork.
+**8. Initial Pull Request (PR) to P2 to P1's Fork:**
 
-**7. Document Addition by P1:**
-   - With the folder structure in place, P1 will now add a new document to the team folder named `<Their Name>.md`. For instance, if P1 is Alice, the document should be named `Alice.md`.
-   - After creating the document, P1 will submit a pull request to P2's fork (P2's upstream repository).
+   - Go to UI and you will see your fork and your branch.
+   - `P2` initiate the collaboration by submitting a PR to `P1's fork` and working branch `assignment-3-branch-p1`.
+   - `P1` should review `P2's PR` and merge it into their fork.
 
-**For P2's Upstream Repository (Pointing to P1's Fork):**
-1. Follow the same steps as described in P1's upstream repository setup, but replace P1's fork with P2's fork when adding the upstream remote and URL.
+**9. Final PR to Main Upstream:**
 
-**8. Final PR to Main Upstream:**
-   - To complete the process, P2 will submit a pull request to the main upstream repository (`DS219/spark-seprep`) containing the changes to `assignments/assignment3` made by both teammates.
-
-**9. Adding a PR to Somebody's Fork:**
-   - As part of the collaboration, both P1 and P2 should become familiar with submitting pull requests to each other's forks. This process allows for reviewing and merging changes within the team.
+   - To complete the process, `P2` will submit a PR to the main upstream repository (`DS219/spark-seprep`) containing the changes to `assignments/assignment3` made by both teammates.
 
 **Important Notes:**
+
 - Make sure to maintain clear and descriptive commit messages.
 - Communicate effectively with your teammate to coordinate the process.
 - Review each other's work thoroughly during the pull request phase.
 - If you encounter any issues or have questions, don't hesitate to seek assistance from your instructor.
 
 **Submission:**
+
 - This assignment involves a series of pull requests within the GitHub repository.
 - Ensure that all steps are completed, including setting up upstream repositories for P1 and P2, and that the final pull request to the main upstream repository is made.
 
