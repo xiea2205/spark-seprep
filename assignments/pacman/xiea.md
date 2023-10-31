@@ -10,3 +10,4 @@ Options  { readPreference: 'secondaryPreferred' }
 Listening on port 8080
 
 Changed some rgb values at frontend/public/style.css as well as some image pointers so now pinky and all the other ghosts are replaced with spongebob characters.
+![image](https://github.com/xiea2205/spark-seprep/assets/135669554/79c0b09e-90a6-48d0-8e57-b59fb0285ce8)
